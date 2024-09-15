@@ -1,0 +1,37 @@
+/* this is super cool but SUPER new so not gonna use it yet */
+/* input:user-invalid { border: red solid 3px; } */
+
+/*/////// FORM STYLING ///////*/
+form {
+  margin: 0 auto;
+  width: 23rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ebebeb;
+  padding: 1rem;
+  box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.5);
+}
+
+div {
+  margin: 0.5rem 0;
+}
+
+/*/////// SPECIAL STYLING ///////*/
+.error, fieldset:has(.error) {
+  border-left: 0.2rem solid red;
+}
+
+div:has([name]:required) > label::after,
+fieldset:has([name]:required) > legend:after {
+  content: "*";
+  color: red;
+}
+
+p[role="alert"] {
+  color: gray;
+  font-size: 0.8rem;
+  font-family: sans-serif;
+  margin: 0;
+  padding-left: 0.5rem;
+  display: none;
+}

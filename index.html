@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Form Validation Practice</title>
+</head>
+
+<body>
+  <form id="main-form">
+    <div>
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        pattern="\w{5,16}"
+        title="5 to 16 characters, letters, numbers, and underscores only"
+        aria-describedby="username-error"
+        required
+      >
+      <p id="username-error" role="alert">5 to 16 characters, letters, numbers, and underscores only</p>
+    </div>
+
+    <div>
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$"
+        required
+      >
+      <p id="email-error" role="alert">Please enter a valid email</p>
+    </div>
+
+    <div>
+      <label for="bio">Tell us about yourself:</label>
+      <textarea id="bio" name="bio" minlength="10" required></textarea>
+      <p id="bio-error" role="alert">At least 10 characters please</p>
+    </div>
+
+    <div>
+      <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" name="gender" id="male" value="male" required>
+        <label for="male">Male</label>
+
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Female</label>
+
+        <input type="radio" name="gender" id="other" value="other">
+        <label for="other">Other</label>
+      </fieldset>
+      <p id="gender-error" role="alert">Select an option please</p>
+    </div>
+
+    <div>
+      <label for="country">Select a country</label>
+      <select id="country" name="country" required>
+        <option value="">-</option>
+        <option value="us">United States</option>
+        <option value="ca">Canada</option>
+        <option value="mx">Mexico</option>
+      </select>
+      <p id="country-error" role="alert">Please select your country</p>
+    </div>
+    <div>
+      <input
+        type="checkbox"
+        name="agree"
+        id="agree"
+        title="Please agree to terms and conditions"
+        required
+      >
+      <label for="agree">I agree to the terms and conditions</label>
+      <p id="agree-error" role="alert">You can't go on without accepting</p>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

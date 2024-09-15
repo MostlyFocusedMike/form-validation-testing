@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/76566239/html-input-pattern-attribute-wont-validate-some-regex-expression
